@@ -1,10 +1,8 @@
 FROM python
 WORKDIR /code
 
-COPY requirements.txt /code/requirements.txt
+COPY . . 
 RUN pip install -r requirements.txt
 
-RUN . /code/ 
 
-
-EXPOSE 8080
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]

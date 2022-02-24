@@ -1,5 +1,4 @@
 import pickle
-
 import pandas as pd 
 from fastapi import FastAPI
 from unidecode import unidecode
