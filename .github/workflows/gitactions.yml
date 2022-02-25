@@ -47,4 +47,14 @@ jobs:
     - name: 'Use gcloud CLI'
       run: 'gcloud info'
 
-    
+    - name: Configure Docker
+      run: gcloud auth configure-docker --quiet
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Update image
+      run: |-
+          gcloud --quiet beta compute ssh --zone "europe-west1-b" "api-app" --project "moonlit-palace-338110" \
+          -- docker stop "swerdeste/api_dataops" & docker rm "swerdeste/api_dataops" & docker pull swerdeste/api_dataops:latest
+          
