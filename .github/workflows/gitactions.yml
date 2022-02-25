@@ -28,6 +28,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true 
-          tags: swerdeste/API_DataOps:latest
-          cache-from: type=registry,ref=swerdeste/API_DataOps:buildcache
-          cache-to: type=registry,ref=swerdeste/API_DataOps:buildcache,mode=max
+          tags: swerdeste/api_dataops:latest
+          cache-from: type=registry,ref=swerdeste/api_dataops:buildcache
+          cache-to: type=registry,ref=swerdeste/api_dataops:buildcache,mode=max
