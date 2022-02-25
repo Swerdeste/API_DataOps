@@ -63,7 +63,8 @@ jobs:
 
     - name: Create instance 
       run: |-
-          gcloud compute instance-templates create-with-container test-api \
+          gcloud compute instances create-with-container API_ach \
           --container-image swerdeste/api_dataops:latest
+
 
           
