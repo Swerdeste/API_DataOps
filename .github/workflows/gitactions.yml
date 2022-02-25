@@ -31,3 +31,20 @@ jobs:
           tags: swerdeste/api_dataops:latest
           cache-from: type=registry,ref=swerdeste/api_dataops:buildcache
           cache-to: type=registry,ref=swerdeste/api_dataops:buildcache,mode=max
+
+
+  job_id:
+    runs-on: ubuntu-latest
+    steps:
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v0'
+      with:
+        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+
+    - name: 'Set up Cloud SDK'
+      uses: 'google-github-actions/setup-gcloud@v0'
+
+    - name: 'Use gcloud CLI'
+      run: 'gcloud info'
+
+    
